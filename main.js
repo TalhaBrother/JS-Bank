@@ -9,8 +9,14 @@ setTimeout(()=>{
 },1000)
 
 
-gsap.set(".image img", { opacity: 0, x: 100 });
-gsap.set(".a", { opacity: 0, x: -100 });
-gsap.to(".image img", {  x: -40,opacity:1, duration: 1 });
-gsap.to(".a", {  x:40,opacity:1, duration: 1 });
+// Check if screen width is greater than 480px (only desktop/tablet)
+if (window.innerWidth > 480) {
+  // GSAP animations
+  gsap.set(".image img", { opacity: 0, x: 100 });
+  gsap.set(".a", { opacity: 0, x: -100 });
+
+  gsap.to(".image img", { x: -40, opacity: 1, duration: 1 });
+  gsap.to(".a", { x: 40, opacity: 1, duration: 1 });
+}
+
 
